@@ -25,13 +25,16 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
-    private void InitializeBoard(){
+    private void InitializeBoard()
+    {
         grid = new Cell[width, height];
-        
+
         int startX = (int)Math.Round(boardPosition.x);
         int startZ = (int)Math.Round(boardPosition.z);
-        for (int x = startX; x < startX + width; x++){
-            for (int z = startZ; z < startZ + height; z++){
+        for (int x = startX; x < startX + width; x++)
+        {
+            for (int z = startZ; z < startZ + height; z++)
+            {
                 CreateCell(x, z, startX, startZ);
             }
         }
@@ -76,7 +79,7 @@ public class Board : MonoBehaviour
             to.PlacePiece(piece);
             from.ClearPiece();
             
-            piece.UpdatePosition(to.getX, to.getY);
+            piece.UpdatePosition(to.getX, to.getZ);
         }
     }
 }
