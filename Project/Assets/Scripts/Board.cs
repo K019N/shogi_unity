@@ -27,7 +27,7 @@ public class Board : MonoBehaviour
 
     private void InitializeBoard(){
         grid = new Cell[width, height];
-        
+
         int startX = (int)Math.Round(boardPosition.x);
         int startZ = (int)Math.Round(boardPosition.z);
         for (int x = startX; x < startX + width; x++){
@@ -58,6 +58,17 @@ public class Board : MonoBehaviour
         renderer.material = isDark ? darkCellMaterial : lightCellMaterial;
     }
 
+    public (int x, int z) GetCellPosition(Cell cell) {
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                if (grid[x, z] == cell) {
+                    return (x, z);
+                }
+            }
+        }
+        return (-1, -1);
+    }
+
     public Cell GetCell(int x, int z){
         if (x >= 0 && x < width && z >= 0 && z < height){
             return grid[x, z];
@@ -66,17 +77,13 @@ public class Board : MonoBehaviour
         return null;
     }
 
-    public bool IsValidPosition(int x, int z){
-        return x >= 0 && x < width && z >= 0 && z < height;
-    }
-
     public void MovePiece(Cell from, Cell to){
         if (from.IsOccupied() && !to.IsOccupied()){
             IPiece piece = from.getCurrentPiece;
             to.PlacePiece(piece);
             from.ClearPiece();
             
-            piece.UpdatePosition(to.getX, to.getY);
+            piece.UpdatePosition(to.getX, to.getZ);
         }
     }
 }
