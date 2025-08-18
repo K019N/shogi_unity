@@ -61,8 +61,21 @@ public class Board : MonoBehaviour
         renderer.material = isDark ? darkCellMaterial : lightCellMaterial;
     }
 
+    public (int x, int z) GetCellPosition(Cell cell) {
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                if (grid[x, z] == cell) {
+                    return (x, z);
+                }
+            }
+        }
+        return (-1, -1);
+    }
+
     public Cell GetCell(int x, int z){
-        if (x >= 0 && x < width && z >= 0 && z < height){
+        // FIXME: bred
+        if (x >= 0 && x < width && z >= 0 && z < height)
+        {
             return grid[x, z];
         }
         Debug.LogError($"Invalid cell coordinates: ({x},{z})");

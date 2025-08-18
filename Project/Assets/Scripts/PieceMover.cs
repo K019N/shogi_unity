@@ -86,6 +86,11 @@ public class PieceMover : MonoBehaviour
         if (selectedPiece == null) return;
 
         Cell currentCell = board.GetCell(selectedPiece.getBoardX, selectedPiece.getBoardZ);
+
+        int curX = board.GetCellPosition(currentCell).x, curZ = board.GetCellPosition(currentCell).z;
+        int tarX = board.GetCellPosition(targetCell).x, tarZ = board.GetCellPosition(targetCell).z;
+        if (!selectedPiece.IsLegalMove(curX, curZ, tarX, tarZ)) return;
+
         board.MovePiece(currentCell, targetCell);
         selectedPiece.UpdatePosition(targetCell.getX, targetCell.getZ);
 

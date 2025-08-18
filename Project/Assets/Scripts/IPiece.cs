@@ -24,10 +24,7 @@ public abstract class IPiece : MonoBehaviour
         transform.position = new Vector3(newX, selfY, newZ);
     }
 
-    public void move(){
-        // TODO: mabye drag'n'drop moving
-        // or click to figure, than to cell
-    }
+    public abstract bool IsLegalMove(int curX, int curZ, int tarX, int tarZ);
 
     public void SetSelected(bool isSelected){
         selectionIndicator?.SetActive(isSelected);
