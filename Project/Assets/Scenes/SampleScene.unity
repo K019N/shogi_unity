@@ -379,6 +379,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1114821919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8607530669323722818, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
+  m_PrefabInstance: {fileID: 8365984669677810156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1114821925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114821919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fcaa6396c27104ba9cb88d0d92dc7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardX: 0
+  boardZ: 0
+  selfY: 0.5
+  selectionIndicator: {fileID: 1203124338}
+--- !u!114 &1114821926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114821919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99df35a25ef4ac944bc8f96d1c2b72ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardX: 0
+  boardZ: 0
+  selectionIndicator: {fileID: 1203124338}
+--- !u!1 &1203124338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 533084647305592652, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
+  m_PrefabInstance: {fileID: 8365984669677810156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809004000
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,10 +600,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piece
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1267464170941639447, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8607530669323722818, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114821925}
+    - targetCorrespondingSourceObject: {fileID: 8607530669323722818, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114821926}
   m_SourcePrefab: {fileID: 100100000, guid: a4a379ffb48f64b409c61270c6e2220f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
