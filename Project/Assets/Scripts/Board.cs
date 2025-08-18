@@ -25,16 +25,13 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
-    private void InitializeBoard()
-    {
+    private void InitializeBoard(){
         grid = new Cell[width, height];
 
         int startX = (int)Math.Round(boardPosition.x);
         int startZ = (int)Math.Round(boardPosition.z);
-        for (int x = startX; x < startX + width; x++)
-        {
-            for (int z = startZ; z < startZ + height; z++)
-            {
+        for (int x = startX; x < startX + width; x++){
+            for (int z = startZ; z < startZ + height; z++){
                 CreateCell(x, z, startX, startZ);
             }
         }
@@ -73,17 +70,11 @@ public class Board : MonoBehaviour
     }
 
     public Cell GetCell(int x, int z){
-        // FIXME: bred
-        if (x >= 0 && x < width && z >= 0 && z < height)
-        {
+        if (x >= 0 && x < width && z >= 0 && z < height){
             return grid[x, z];
         }
         Debug.LogError($"Invalid cell coordinates: ({x},{z})");
         return null;
-    }
-
-    public bool IsValidPosition(int x, int z){
-        return x >= 0 && x < width && z >= 0 && z < height;
     }
 
     public void MovePiece(Cell from, Cell to){

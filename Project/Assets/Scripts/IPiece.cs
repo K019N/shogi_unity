@@ -13,6 +13,8 @@ public abstract class IPiece : MonoBehaviour
     public int getBoardX => boardX;
     public int getBoardZ => boardZ;
 
+    public abstract bool IsLegalMove(int curX, int curZ, int tarX, int tarZ);
+
     private void Start(){
         selfY = gameObject.transform.position.y;
         Debug.Log($"selfY: {selfY}");
@@ -23,8 +25,6 @@ public abstract class IPiece : MonoBehaviour
         boardZ = newZ;
         transform.position = new Vector3(newX, selfY, newZ);
     }
-
-    public abstract bool IsLegalMove(int curX, int curZ, int tarX, int tarZ);
 
     public void SetSelected(bool isSelected){
         selectionIndicator?.SetActive(isSelected);

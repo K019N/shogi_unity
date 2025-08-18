@@ -17,24 +17,20 @@ public class Cell : MonoBehaviour
         originalColor = GetComponent<MeshRenderer>().material.color;
     }
 
-    public void Initialize(int x, int z)
-    {
+    public void Initialize(int x, int z){
         this.x = x;
         this.z = z;
     }
 
-    public void PlacePiece(IPiece piece)
-    {
+    public void PlacePiece(IPiece piece){
         currentPiece = piece;
     }
 
-    public void ClearPiece()
-    {
+    public void ClearPiece(){
         currentPiece = null;
     }
 
-    public bool IsOccupied()
-    {
+    public bool IsOccupied(){
         return currentPiece != null;
     }
     
